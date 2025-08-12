@@ -145,6 +145,7 @@ function getBook(id) {
 
 // Destructuring
 
+/*
 const book = getBook(1);
 book;
 
@@ -185,3 +186,19 @@ function getTotalReviewCount(book) {
 }
 
 console.log(getTotalReviewCount(book));
+*/
+
+// --------------------------------------
+// Array
+// map
+
+const books = getBooks();
+
+const titles = books.map(book => book.title);
+console.log(titles);
+
+const essentialData = books.map(book => ({
+  title: book.title,
+  author: book.author,
+}));
+console.log(essentialData);
