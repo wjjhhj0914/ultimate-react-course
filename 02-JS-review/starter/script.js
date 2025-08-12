@@ -174,3 +174,14 @@ const updatedBook = {
   pages: 1210,
 };
 console.log(updatedBook);
+
+// --------------------------------------
+// Optional Chaining
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews.goodreads.reviewsCount;
+  const librarything = book.reviews.librarything?.reviewsCount ?? 0;
+  librarything;
+  return goodreads + librarything;
+}
+
+console.log(getTotalReviewCount(book));
