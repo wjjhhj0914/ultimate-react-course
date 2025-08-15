@@ -188,6 +188,7 @@ function getTotalReviewCount(book) {
 console.log(getTotalReviewCount(book));
 */
 
+/*
 // --------------------------------------
 // Array
 // map
@@ -202,3 +203,64 @@ const essentialData = books.map(book => ({
   author: book.author,
 }));
 console.log(essentialData);
+
+// --------------------------------------
+// Array
+// filter
+const longBooks = books
+  .filter(book => book.pages > 500)
+  .filter(book => book.hasMovieAdaptation);
+
+longBooks;
+
+const adventureBooks = books
+  .filter(books => books.genres.includes('adventure'))
+  .map(book => book.title);
+adventureBooks;
+
+// --------------------------------------
+// Array
+// reduce
+const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
+pagesAllBooks;
+
+// --------------------------------------
+// Array
+// sort
+const arr = [3, 7, 1, 9, 6];
+const sorted = arr.slice().sort((a, b) => a - b);
+sorted;
+arr;
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+sortedByPages;
+
+// --------------------------------------
+// Working with Immutable Arrays
+
+// 1) Add book object to array
+const newBook = {
+  id: 6,
+  title: 'Harry Potter and the Chamber of Secrets',
+  author: 'J. K. Rowling',
+};
+
+const booksAfterAdd = [...books, newBook];
+booksAfterAdd;
+
+// 2) Delete book object from array
+const booksAfterDelete = booksAfterAdd.filter(book => book.id !== 3);
+booksAfterDelete;
+
+// 3) Update book object in the array
+const booksAfterUpdate = booksAfterDelete.map(book =>
+  book.id === 1 ? { ...book, pages: 1 } : book
+);
+booksAfterUpdate;
+*/
+
+fetch('https://jsonplaceholder.typicode.com/todos').then(res =>
+  res.json().then(data => console.log(data))
+);
+
+console.log('jonas');
